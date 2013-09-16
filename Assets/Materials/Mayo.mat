@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Element
-  m_Shader: {fileID: 4800000, guid: a9324501242024226bc2510804130819, type: 3}
+  m_Name: Mayo
+  m_Shader: {fileID: 4800000, guid: 8018c69c50553484f85d02e3be29250b, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -36,4 +36,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .992393494, g: 1, b: .448529422, a: 1}
+        second: {r: .994117618, g: 1, b: .573529422, a: 1}
