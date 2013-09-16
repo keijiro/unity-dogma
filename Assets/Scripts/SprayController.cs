@@ -3,9 +3,16 @@ using System.Collections;
 
 public class SprayController : MonoBehaviour
 {
+    public GameObject propellant;
     public float interval = 0.1f;
     public float velocity = 5.0f;
     public float randomFactor = 1.0f;
+    BottleController bottle;
+
+    void Awake ()
+    {
+        bottle = transform.parent.GetComponentInChildren<BottleController> ();
+    }
 
     GameObject Spray ()
     {
@@ -13,7 +20,7 @@ public class SprayController : MonoBehaviour
         v += transform.right * Random.Range (-randomFactor, randomFactor);
         v += transform.up * Random.Range (-randomFactor, randomFactor);
 
-        var go = Instantiate (BottleController.activeBottle.sprayPrefab) as GameObject;
+        var go = Instantiate (propellant) as GameObject;
         go.rigidbody.velocity = v;
 
         return go;
@@ -22,14 +29,14 @@ public class SprayController : MonoBehaviour
     IEnumerator Start ()
     {
         while (true) {
-            while (BottleController.activeBottle == null || !BottleController.activeBottle.Squashed) {
+            while (!bottle.Squashed) {
                 yield return null;
             }
 
             var prevInstance = Spray ();
             yield return new WaitForSeconds (interval);
 
-            while (BottleController.activeBottle != null && BottleController.activeBottle.Squashed) {
+            while (bottle.Squashed) {
                 var instance = Spray ();
 
                 var joint = instance.AddComponent<ConfigurableJoint> ();
