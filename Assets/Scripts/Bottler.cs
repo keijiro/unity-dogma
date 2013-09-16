@@ -18,7 +18,12 @@ public class Bottler : MonoBehaviour
         GameObject prevBottle = null;
 
         while (true) {
+            Camera.main.GetComponent<CameraController>().ZoomDown();
+            yield return new WaitForSeconds(0.5f);
             var bottle = Instantiate (SelectPrefabRandomly ()) as GameObject;
+            Camera.main.GetComponent<CameraController>().ZoomUp();
+            yield return new WaitForSeconds(0.5f);
+
             yield return new WaitForSeconds (waitFor);
 
             if (prevBottle != null) {

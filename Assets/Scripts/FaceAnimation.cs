@@ -14,7 +14,7 @@ public class FaceAnimation : MonoBehaviour
             Mathf.Sin (Time.time * 1.789f)
         );
 
-        transform.localPosition = waving * 0.1f + Random.onUnitSphere * shake;
+        transform.localPosition = waving * 0.1f + Random.onUnitSphere * shake * 0.6f;
 
         GetComponent<SkinnedMeshRenderer> ().SetBlendShapeWeight (1, Mathf.Min (smile * 2000.0f, 100.0f));
 
