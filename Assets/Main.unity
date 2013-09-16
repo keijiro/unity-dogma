@@ -378,9 +378,10 @@ GameObject:
   - 137: {fileID: 1429632067}
   - 95: {fileID: 1429632066}
   - 114: {fileID: 1429632069}
+  - 54: {fileID: 1429632070}
   m_Layer: 0
   m_Name: Face
-  m_TagString: Untagged
+  m_TagString: Face
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -462,6 +463,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4c3b8313b60c4e84bcf5a7afc5cc596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &1429632070
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1429632065}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1913247163
 Prefab:
   m_ObjectHideFlags: 0
@@ -560,6 +576,10 @@ Prefab:
     - target: {fileID: 13700000, guid: 10c73e5253d8c49eaac07599a7b8e7f5, type: 3}
       propertyPath: m_BlendShapeWeights.Array.data[2]
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 10c73e5253d8c49eaac07599a7b8e7f5, type: 3}
+      propertyPath: m_TagString
+      value: Face
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 10c73e5253d8c49eaac07599a7b8e7f5, type: 3}
