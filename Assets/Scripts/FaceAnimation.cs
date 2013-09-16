@@ -3,6 +3,9 @@ using System.Collections;
 
 public class FaceAnimation : MonoBehaviour
 {
+    public AudioClip smileAudioClip;
+    public AudioClip angerAudioClip;
+
     float shake;
     float smile;
 
@@ -25,8 +28,12 @@ public class FaceAnimation : MonoBehaviour
     public void BeginAnimation(string mode) {
         if (mode == "anger") {
             shake = 0.3f;
+            audio.clip = angerAudioClip;
+            audio.Play();
         } else if (mode == "smile") {
             smile = 0.6f;
+            audio.clip = smileAudioClip;
+            audio.Play();
         }
     }
 }
