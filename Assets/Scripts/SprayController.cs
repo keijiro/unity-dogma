@@ -1,20 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SillyStringGenerator : MonoBehaviour
+public class SprayController : MonoBehaviour
 {
     public float interval = 0.1f;
     public float velocity = 5.0f;
     public float randomFactor = 1.0f;
-    public GameObject element;
+    public GameObject mayoPrefab;
+    BottleController bottle;
 
-    GameObject SpawnElement() {
+    void Awake ()
+    {
+        bottle = FindObjectOfType<BottleController> ();
+    }
+
+    GameObject Spray ()
+    {
         var v = transform.forward * velocity;
         v += transform.right * Random.Range (-randomFactor, randomFactor);
         v += transform.up * Random.Range (-randomFactor, randomFactor);
 
-        var go = Instantiate (element) as GameObject;
-        go.rigidbody.AddForce(v, ForceMode.VelocityChange);
+        var go = Instantiate (mayoPrefab) as GameObject;
+        go.rigidbody.velocity = v;
 
         return go;
     }
@@ -22,32 +29,19 @@ public class SillyStringGenerator : MonoBehaviour
     IEnumerator Start ()
     {
         while (true) {
-            while (!Input.GetMouseButton(0)) {
+            while (!bottle.Squashed) {
                 yield return null;
             }
 
-            var prev = SpawnElement();
+            var prevInstance = Spray ();
             yield return new WaitForSeconds (interval);
 
-            while (Input.GetMouseButton (0)) {
-                var elm = SpawnElement();
+            while (bottle.Squashed) {
+                var instance = Spray ();
 
-                var joint = elm.AddComponent<ConfigurableJoint>();
-                joint.connectedBody = prev.rigidbody;
-                
-                var limit = new SoftJointLimit ();
-//                limit.limit = 0.1f;
-//                limit.spring = 40.0f;
-                joint.linearLimit = limit;
+                var joint = instance.AddComponent<ConfigurableJoint> ();
+                joint.connectedBody = prevInstance.rigidbody;
 
-                /*
-                limit.limit = 10.0f;
-                joint.angularYLimit = limit;
-                joint.angularZLimit = limit;
-                joint.highAngularXLimit = limit;
-                joint.lowAngularXLimit = limit;
-                */
-                
                 joint.xMotion = ConfigurableJointMotion.Limited;
                 joint.yMotion = ConfigurableJointMotion.Limited;
                 joint.zMotion = ConfigurableJointMotion.Limited;
@@ -55,7 +49,7 @@ public class SillyStringGenerator : MonoBehaviour
                 joint.angularYMotion = ConfigurableJointMotion.Free;
                 joint.angularZMotion = ConfigurableJointMotion.Free;
 
-                prev = elm;
+                prevInstance = instance;
                 yield return new WaitForSeconds (interval);
             }
         }

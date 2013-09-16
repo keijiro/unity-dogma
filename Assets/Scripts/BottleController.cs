@@ -3,37 +3,46 @@ using System.Collections;
 
 public class BottleController : MonoBehaviour
 {
-    public float squashTime = 0.4f;
     Leap.Controller leap;
     float squash;
+
+    public bool Squashed {
+        get {
+            return squash > 50.0f;
+        }
+    }
 
     void Awake ()
     {
         leap = new Leap.Controller ();
     }
 
-    void Update ()
+    float GetOpenness ()
     {
         var frame = leap.Frame ();
-        var openness = 0.0f;
 
         if (frame.Hands.Count < 1) {
-            openness = 100.0f;
-        } else {
-            var palmPosition = frame.Hands [0].PalmPosition;
-            foreach (var finger in frame.Hands[0].Fingers) {
-                var distance = (finger.TipPosition - palmPosition).Magnitude;
-                openness += distance * 0.4f;
-            }
-            openness = Mathf.Clamp (openness - 50.0f, 0.0f, 100.0f);
+            return 100.0f;
         }
 
-        Debug.Log (openness);
+        var sum = 0.0f;
 
-        squash = 100.0f - openness;
+        var palmPosition = frame.Hands [0].PalmPosition;
+        foreach (var finger in frame.Hands[0].Fingers) {
+            var distance = (finger.TipPosition - palmPosition).Magnitude;
+            sum += distance * 0.4f;
+        }
 
-        GetComponent<SkinnedMeshRenderer> ().SetBlendShapeWeight (0, squash);
-        GetComponent<SkinnedMeshRenderer> ().SetBlendShapeWeight (1, squash);
-        GetComponent<SkinnedMeshRenderer> ().SetBlendShapeWeight (2, squash);
+        return Mathf.Clamp (sum - 50.0f, 0.0f, 100.0f);
+    }
+
+    void Update ()
+    {
+        squash = Mathf.Lerp (squash, 100.0f - GetOpenness (), 0.5f);
+
+        SkinnedMeshRenderer smr = GetComponent<SkinnedMeshRenderer> ();
+        smr.SetBlendShapeWeight (0, squash);
+        smr.SetBlendShapeWeight (1, squash);
+        smr.SetBlendShapeWeight (2, squash);
     }
 }

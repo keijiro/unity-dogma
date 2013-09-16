@@ -157,7 +157,7 @@ GameObject:
   - 95: {fileID: 1003294668}
   - 114: {fileID: 1003294671}
   m_Layer: 0
-  m_Name: syrup_blendshape
+  m_Name: Bottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -224,7 +224,7 @@ Transform:
   m_PrefabInternal: {fileID: 1761153589}
   m_GameObject: {fileID: 1003294667}
   m_LocalRotation: {x: .405579805, y: -.405579865, z: .579227984, w: .579227865}
-  m_LocalPosition: {x: 1.79999995, y: 0, z: 0}
+  m_LocalPosition: {x: 1.5, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -239,7 +239,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ec98d5054072466ab32634d81b7f631, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  squashTime: .200000003
 --- !u!1 &1075562348
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,7 +249,7 @@ GameObject:
   - 4: {fileID: 1075562349}
   - 114: {fileID: 1075562350}
   m_Layer: 0
-  m_Name: Generator
+  m_Name: Spray
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -281,7 +280,7 @@ MonoBehaviour:
   interval: .00999999978
   velocity: 6
   randomFactor: 2
-  element: {fileID: 100000, guid: cef8a2afe281640109d21675a4cfbb1e, type: 2}
+  mayoPrefab: {fileID: 100000, guid: cef8a2afe281640109d21675a4cfbb1e, type: 2}
 --- !u!1 &1160269076
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,7 +515,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 5d364c78bf09b472bbda276a692c8d0c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.79999995
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5d364c78bf09b472bbda276a692c8d0c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -585,6 +584,10 @@ Prefab:
     - target: {fileID: 13700000, guid: 5d364c78bf09b472bbda276a692c8d0c, type: 3}
       propertyPath: m_BlendShapeWeights.Array.data[3]
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5d364c78bf09b472bbda276a692c8d0c, type: 3}
+      propertyPath: m_Name
+      value: Bottle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d364c78bf09b472bbda276a692c8d0c, type: 3}
