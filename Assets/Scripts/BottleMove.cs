@@ -4,6 +4,7 @@ using System.Collections;
 public class BottleMove : MonoBehaviour
 {
     public float width = 3.0f;
+    public float speed = 12.0f;
     Vector3 target;
 
     void Start ()
@@ -18,6 +19,6 @@ public class BottleMove : MonoBehaviour
 
     void Update ()
     {
-        transform.localPosition = Vector3.Lerp (target, transform.localPosition, Mathf.Exp (-8.0f * Time.deltaTime));
+        transform.localPosition = Vector3.Lerp (target, transform.localPosition, Mathf.Exp (-speed * Time.deltaTime));
     }
 }

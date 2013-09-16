@@ -7,6 +7,7 @@ public class SprayController : MonoBehaviour
     public float interval = 0.1f;
     public float velocity = 5.0f;
     public float randomFactor = 1.0f;
+    public float duration = 0.5f;
     BottleController bottle;
 
     void Awake ()
@@ -33,10 +34,12 @@ public class SprayController : MonoBehaviour
                 yield return null;
             }
 
+            var timer = 0.0f;
+
             var prevInstance = Spray ();
             yield return new WaitForSeconds (interval);
 
-            while (bottle.Squashed) {
+            while (bottle.Squashed && timer < duration) {
                 var instance = Spray ();
 
                 var joint = instance.AddComponent<ConfigurableJoint> ();
@@ -51,6 +54,12 @@ public class SprayController : MonoBehaviour
 
                 prevInstance = instance;
                 yield return new WaitForSeconds (interval);
+
+                timer += interval;
+            }
+
+            while (bottle.Squashed) {
+                yield return null;
             }
         }
     }

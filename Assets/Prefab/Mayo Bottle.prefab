@@ -125,6 +125,7 @@ MonoBehaviour:
   interval: .00999999978
   velocity: 6
   randomFactor: 2
+  duration: .100000001
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -137,6 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 5
+  speed: 12
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
