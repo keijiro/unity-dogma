@@ -6,13 +6,6 @@ public class SprayController : MonoBehaviour
     public float interval = 0.1f;
     public float velocity = 5.0f;
     public float randomFactor = 1.0f;
-    public GameObject mayoPrefab;
-    BottleController bottle;
-
-    void Awake ()
-    {
-        bottle = FindObjectOfType<BottleController> ();
-    }
 
     GameObject Spray ()
     {
@@ -20,7 +13,7 @@ public class SprayController : MonoBehaviour
         v += transform.right * Random.Range (-randomFactor, randomFactor);
         v += transform.up * Random.Range (-randomFactor, randomFactor);
 
-        var go = Instantiate (mayoPrefab) as GameObject;
+        var go = Instantiate (BottleController.activeBottle.sprayPrefab) as GameObject;
         go.rigidbody.velocity = v;
 
         return go;
@@ -29,14 +22,14 @@ public class SprayController : MonoBehaviour
     IEnumerator Start ()
     {
         while (true) {
-            while (!bottle.Squashed) {
+            while (BottleController.activeBottle == null || !BottleController.activeBottle.Squashed) {
                 yield return null;
             }
 
             var prevInstance = Spray ();
             yield return new WaitForSeconds (interval);
 
-            while (bottle.Squashed) {
+            while (BottleController.activeBottle != null && BottleController.activeBottle.Squashed) {
                 var instance = Spray ();
 
                 var joint = instance.AddComponent<ConfigurableJoint> ();

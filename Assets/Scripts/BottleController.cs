@@ -3,6 +3,10 @@ using System.Collections;
 
 public class BottleController : MonoBehaviour
 {
+    static public BottleController activeBottle;
+
+    public GameObject sprayPrefab;
+
     Leap.Controller leap;
     float squash;
 
@@ -15,6 +19,7 @@ public class BottleController : MonoBehaviour
     void Awake ()
     {
         leap = new Leap.Controller ();
+        activeBottle = this;
     }
 
     float GetOpenness ()
