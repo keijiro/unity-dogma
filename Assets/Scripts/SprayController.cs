@@ -20,7 +20,7 @@ public class SprayController : MonoBehaviour
         v += transform.right * Random.Range (-randomFactor, randomFactor);
         v += transform.up * Random.Range (-randomFactor, randomFactor);
 
-        var go = Instantiate (propellant) as GameObject;
+        var go = Instantiate (propellant, transform.position, transform.rotation) as GameObject;
         go.rigidbody.velocity = v;
 
         return go;
