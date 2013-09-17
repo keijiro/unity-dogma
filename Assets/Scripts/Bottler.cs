@@ -7,6 +7,7 @@ public class Bottler : MonoBehaviour
     public GameObject tabascoBottlePrefab;
     public float chanceOfMayo = 0.7f;
     public float waitFor = 1.5f;
+    public float waitMultiplier = 0.95f;
 
     GameObject SelectPrefabRandomly ()
     {
@@ -33,6 +34,8 @@ public class Bottler : MonoBehaviour
             bottle.GetComponentInChildren<SprayController> ().StopCoroutine("Start");
             bottle.GetComponent<BottleMove> ().StartExit ();
             prevBottle = bottle;
+
+            waitFor *= waitMultiplier;
         }
     }
 }
