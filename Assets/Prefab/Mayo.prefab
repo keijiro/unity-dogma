@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35a67caf3278e4e388b16083623a6e83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: smile
+  score: 1
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
