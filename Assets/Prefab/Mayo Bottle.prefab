@@ -25,8 +25,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 400002}
   - 137: {fileID: 13700000}
-  - 95: {fileID: 9500000}
   - 114: {fileID: 11400000}
+  - 95: {fileID: 9500000}
   m_Layer: 0
   m_Name: Bottle
   m_TagString: Untagged
@@ -69,8 +69,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
-  m_LocalRotation: {x: .405579805, y: -.405579865, z: .579227984, w: .579227865}
-  m_LocalPosition: {x: 1.5, y: 0, z: 0}
+  m_LocalRotation: {x: .5, y: -.500000119, z: .5, w: .49999994}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 400000}
@@ -87,7 +87,7 @@ Transform:
   m_Father: {fileID: 400000}
 --- !u!95 &9500000
 Animator:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
@@ -163,19 +163,17 @@ SkinnedMeshRenderer:
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 1
-  m_Mesh: {fileID: 4300000, guid: 5d364c78bf09b472bbda276a692c8d0c, type: 3}
+  m_Mesh: {fileID: 4300000, guid: e395c89a247724009be7900c00ff7872, type: 3}
   m_Bones: []
   m_AnimatorSkeletonIndices: 
-  m_Animator: {fileID: 9500000}
+  m_Animator: {fileID: 0}
   m_BlendShapeWeights:
-  - 0
-  - 0
   - 0
   - 1
   m_RootBone: {fileID: 400002}
   m_AABB:
-    m_Center: {x: .00583165884, y: .165476725, z: -.000981967896}
-    m_Extent: {x: .0767331198, y: .164999977, z: .0561347865}
+    m_Center: {x: .00484081358, y: -.165002763, z: .00117605925}
+    m_Extent: {x: .0767331198, y: .165176481, z: .0483071581}
   m_DirtyAABB: 0
 --- !u!1001 &100100000
 Prefab:

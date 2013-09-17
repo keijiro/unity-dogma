@@ -42,7 +42,5 @@ public class BottleController : MonoBehaviour
 
         SkinnedMeshRenderer smr = GetComponent<SkinnedMeshRenderer> ();
         smr.SetBlendShapeWeight (0, squash);
-        smr.SetBlendShapeWeight (1, squash);
-        smr.SetBlendShapeWeight (2, squash);
     }
 }
