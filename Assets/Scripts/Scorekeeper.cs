@@ -3,8 +3,10 @@ using System.Collections;
 
 public class Scorekeeper : MonoBehaviour
 {
-    public GUIStyle labelStyle;
+    public GUIStyle scoreStyle;
+    public GUIStyle messageStyle;
     int score;
+    bool ended;
 
     public int AddSubScore (int delta)
     {
@@ -12,8 +14,19 @@ public class Scorekeeper : MonoBehaviour
         return score;
     }
 
+    public void EndGame()
+    {
+        ended = true;
+    }
+
     void OnGUI ()
     {
-        GUI.Label (new Rect (32, 32, Screen.width - 64, Screen.height - 64), "しあわせ : " + score, labelStyle);
+        var rect = new Rect(0, 0, Screen.width, Screen.height);
+
+        GUI.Label (rect, "しあわせ : " + score, scoreStyle);
+
+        if (ended) {
+            GUI.Label (rect, "しゅうりょう", messageStyle);
+        }
     }
 }
