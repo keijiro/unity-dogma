@@ -5,7 +5,6 @@ public class FaceAnimation : MonoBehaviour
 {
     public AudioClip smileAudioClip;
     public AudioClip angerAudioClip;
-
     float shake;
     float smile;
 
@@ -19,21 +18,25 @@ public class FaceAnimation : MonoBehaviour
 
         transform.localPosition = waving * 0.1f + Random.onUnitSphere * shake * 0.6f;
 
-        GetComponent<SkinnedMeshRenderer> ().SetBlendShapeWeight (1, Mathf.Min (smile * 2000.0f, 100.0f));
+        var smr = GetComponent<SkinnedMeshRenderer> ();
+        var chew = 0.5f * (Mathf.Sin (Time.time * 30.0f) + 1.0f);
+        smr.SetBlendShapeWeight (2, Mathf.Min (smile * 200.0f, 100.0f) * chew);
+        smr.SetBlendShapeWeight (4, Mathf.Min (shake * 2000.0f, 100.0f));
 
         shake *= Mathf.Exp (-10.0f * Time.deltaTime);
         smile = Mathf.Max (0.0f, smile - Time.deltaTime);
     }
 
-    public void BeginAnimation(string mode) {
+    public void BeginAnimation (string mode)
+    {
         if (mode == "anger") {
             shake = 0.3f;
             audio.clip = angerAudioClip;
-            audio.Play();
+            audio.Play ();
         } else if (mode == "smile") {
             smile = 0.6f;
             audio.clip = smileAudioClip;
-            audio.Play();
+            audio.Play ();
         }
     }
 }
