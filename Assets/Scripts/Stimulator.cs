@@ -9,7 +9,7 @@ public class Stimulator : MonoBehaviour
     void OnCollisionEnter (Collision collision)
     {
         if (collision.gameObject.tag == "Face") {
-            collision.gameObject.SendMessage("BeginAnimation", score > 0 ? "smile" : "anger");
+            collision.gameObject.BroadcastMessage("BeginAnimation", score > 0 ? "smile" : "anger");
             if (scorekeeperReference == null) {
                 scorekeeperReference = FindObjectOfType<Scorekeeper>();
             }

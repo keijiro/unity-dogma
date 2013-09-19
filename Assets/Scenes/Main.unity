@@ -84,9 +84,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 46462336}
+  - 54: {fileID: 46462337}
   m_Layer: 0
   m_Name: Face Pivot
-  m_TagString: Untagged
+  m_TagString: Face
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,8 +102,24 @@ Transform:
   m_LocalPosition: {x: -1.34000003, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 567151639}
   - {fileID: 1043849485}
   m_Father: {fileID: 0}
+--- !u!54 &46462337
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 46462335}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &567151635
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,8 +130,8 @@ GameObject:
   - 4: {fileID: 567151639}
   - 65: {fileID: 567151636}
   m_Layer: 0
-  m_Name: Collision
-  m_TagString: Untagged
+  m_Name: Collider
+  m_TagString: Face
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,11 +154,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 567151635}
-  m_LocalRotation: {x: -.0684318766, y: .703787744, z: .068431899, w: .703787625}
-  m_LocalPosition: {x: -1.71571112, y: 16.7649517, z: 3.09003354e-07}
-  m_LocalScale: {x: 12.6157274, y: 19.8158894, z: 10.741477}
+  m_LocalRotation: {x: -.0686948076, y: .704310954, z: .0685898811, w: .70322305}
+  m_LocalPosition: {x: -.171571136, y: 1.67649543, z: 0}
+  m_LocalScale: {x: 1.26157272, y: 1.98158956, z: 1.07414782}
   m_Children: []
-  m_Father: {fileID: 1043849485}
+  m_Father: {fileID: 46462336}
 --- !u!1 &974274413
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,7 +293,6 @@ GameObject:
   - 4: {fileID: 1043849485}
   - 137: {fileID: 1043849489}
   - 114: {fileID: 1043849488}
-  - 54: {fileID: 1043849487}
   - 82: {fileID: 1043849486}
   m_Layer: 0
   m_Name: dogmaface
@@ -294,8 +310,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: .100000001, y: .100000016, z: .100000001}
-  m_Children:
-  - {fileID: 567151639}
+  m_Children: []
   m_Father: {fileID: 46462336}
 --- !u!82 &1043849486
 AudioSource:
@@ -355,21 +370,6 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!54 &1043849487
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1043849484}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &1043849488
 MonoBehaviour:
   m_ObjectHideFlags: 0
