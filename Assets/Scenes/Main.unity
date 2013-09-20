@@ -694,32 +694,61 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!1 &1517360950
+--- !u!1 &2143237696
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 1517360952}
-  - 82: {fileID: 1517360951}
+  - 4: {fileID: 2143237698}
+  - 114: {fileID: 2143237697}
+  - 82: {fileID: 2143237699}
   m_Layer: 0
-  m_Name: BGM
+  m_Name: Bottler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!82 &1517360951
+--- !u!114 &2143237697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2143237696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9295e9c0976b43908704e344db9bbcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mayoBottlePrefab: {fileID: 100000, guid: 4e1ef3428a9024bf78908ea4f0368a74, type: 2}
+  tabascoBottlePrefab: {fileID: 100000, guid: c592307fbc7e8473fabbe2e7d97934bf, type: 2}
+  chanceOfMayo: .5
+  waitFor: 2.20000005
+  waitMultiplier: .935000002
+  bottleCount: 36
+--- !u!4 &2143237698
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2143237696}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!82 &2143237699
 AudioSource:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1517360950}
+  m_GameObject: {fileID: 2143237696}
   m_Enabled: 1
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: db1c79da5c3724984a50bf7a46a5aa18, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: .300000012
   m_Pitch: 1
   Loop: 1
@@ -768,58 +797,3 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!4 &1517360952
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1517360950}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
---- !u!1 &2143237696
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 2143237698}
-  - 114: {fileID: 2143237697}
-  m_Layer: 0
-  m_Name: Bottler
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2143237697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2143237696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9295e9c0976b43908704e344db9bbcc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mayoBottlePrefab: {fileID: 100000, guid: 4e1ef3428a9024bf78908ea4f0368a74, type: 2}
-  tabascoBottlePrefab: {fileID: 100000, guid: c592307fbc7e8473fabbe2e7d97934bf, type: 2}
-  chanceOfMayo: .5
-  waitFor: 2.20000005
-  waitMultiplier: .935000002
-  bottleCount: 36
---- !u!4 &2143237698
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2143237696}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}

@@ -15,8 +15,8 @@ public class FaceAnimation : MonoBehaviour
             Mathf.Sin (Time.time * 2.973f),
             Mathf.Sin (Time.time * 1.789f)
         );
-
-        transform.localPosition = waving * 0.1f + Random.onUnitSphere * shake * 0.6f;
+        var hop = 0.5f * smile * Mathf.Abs (Mathf.Sin (Time.time * 20.0f));
+        transform.localPosition = waving * 0.1f + Random.onUnitSphere * shake * 0.6f + Vector3.up * hop;
 
         var smr = GetComponent<SkinnedMeshRenderer> ();
         var chew = 0.5f * (Mathf.Sin (Time.time * 30.0f) + 1.0f);

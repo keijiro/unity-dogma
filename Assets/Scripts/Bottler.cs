@@ -19,30 +19,55 @@ public class Bottler : MonoBehaviour
     {
         var cameraMove = Camera.main.GetComponent<CameraController> ();
 
-        GameObject prevBottle = null;
+        // 1st mayo.
+        cameraMove.ZoomUp ();
+        var bottle = Instantiate(mayoBottlePrefab) as GameObject;
+
+        // Wait for a mouse click.
+        while (!Input.GetMouseButtonDown(0)) {
+            yield return null;
+        }
+
+        // Leaving.
+        cameraMove.ZoomDown ();
+        bottle.GetComponent<BottleMove> ().StartExit ();
+        yield return new WaitForSeconds (0.5f);
+        Destroy (bottle);
+
+        // 1st Tabasco.
+        cameraMove.ZoomUp ();
+        bottle = Instantiate(tabascoBottlePrefab) as GameObject;
+
+        // Wait for a mouse click.
+        while (!Input.GetMouseButtonDown(0)) {
+            yield return null;
+        }
+
+        // Leaving.
+        cameraMove.ZoomDown ();
+        bottle.GetComponent<BottleMove> ().StartExit ();
+        yield return new WaitForSeconds (0.5f);
+        Destroy (bottle);
+
+        // Start game.
+        FindObjectOfType<Scorekeeper> ().StartGame ();
+        audio.Play ();
+        yield return new WaitForSeconds (1.0f);
 
         while (bottleCount-- > 0) {
-            cameraMove.ZoomDown ();
+            bottle = Instantiate (SelectPrefabRandomly ()) as GameObject;
 
-            yield return new WaitForSeconds (0.5f);
-
-            var bottle = Instantiate (SelectPrefabRandomly ()) as GameObject;
             cameraMove.ZoomUp ();
-
-            if (prevBottle != null) {
-                Destroy (prevBottle, 0.5f);
-            }
-
-            yield return new WaitForSeconds (waitFor);
+            yield return new WaitForSeconds (Mathf.Max (waitFor, 0.25f));
+            waitFor *= waitMultiplier;
+            cameraMove.ZoomDown ();
 
             bottle.GetComponentInChildren<SprayController> ().StopCoroutine ("Start");
             bottle.GetComponent<BottleMove> ().StartExit ();
 
-            waitFor *= waitMultiplier;
-            prevBottle = bottle;
+            yield return new WaitForSeconds (0.5f);
+            Destroy (bottle);
         }
-
-        yield return new WaitForSeconds (0.5f);
 
         FindObjectOfType<Scorekeeper> ().EndGame ();
     }

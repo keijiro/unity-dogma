@@ -7,6 +7,7 @@ public class Scorekeeper : MonoBehaviour
     public GUIStyle messageStyle;
     int score;
     bool ended;
+    float started;
 
     public int AddSubScore (int delta)
     {
@@ -14,16 +15,31 @@ public class Scorekeeper : MonoBehaviour
         return score;
     }
 
-    public void EndGame()
+    public void StartGame ()
+    {
+        score = 0;
+        started = 0.8f;
+    }
+
+    public void EndGame ()
     {
         ended = true;
     }
 
+    void Update ()
+    {
+        started = Mathf.Max (started - Time.deltaTime, 0.0f);
+    }
+
     void OnGUI ()
     {
-        var rect = new Rect(0, 0, Screen.width, Screen.height);
+        var rect = new Rect (0, 0, Screen.width, Screen.height);
 
         GUI.Label (rect, "しあわせ : " + score, scoreStyle);
+
+        if (started > 0.0f) {
+            GUI.Label (rect, "はじめ", messageStyle);
+        }
 
         if (ended) {
             GUI.Label (rect, "しゅうりょう", messageStyle);

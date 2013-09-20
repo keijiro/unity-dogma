@@ -67,11 +67,11 @@ PlayerSettings:
     width: 0
     height: 0
   m_SupportedAspectRatios:
-    4:3: 1
-    5:4: 1
-    16:10: 1
+    4:3: 0
+    5:4: 0
+    16:10: 0
     16:9: 1
-    Others: 1
+    Others: 0
   iPhoneBundleIdentifier: com.Company.ProductName
   productGUID: c4313961b79d84bfcb7c58aebb75889e
   iPhoneBundleVersion: 1.0
@@ -106,7 +106,11 @@ PlayerSettings:
   AndroidKeystoreName: 
   AndroidKeyaliasName: 
   resolutionDialogBanner: {fileID: 0}
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: 
+    m_Icons:
+    - m_Icon: {fileID: 0}
+      m_Size: 128
   m_BuildTargetBatching: []
   webPlayerTemplate: APPLICATION:Default
   m_TemplateCustomTags: {}
@@ -144,6 +148,7 @@ PlayerSettings:
   ps3SaveGameSlots: 1
   ps3TrialMode: 0
   flashStrippingLevel: 2
+  spritePackerPolicy: 
   scriptingDefineSymbols: {}
   metroPackageName: unity-silly-string
   metroPackageLogo: 
@@ -182,6 +187,7 @@ PlayerSettings:
   blackberryGPSPermissions: 0
   blackberryDeviceIDPermissions: 0
   blackberryMicrophonePermissions: 0
+  blackberryGamepadSupport: 0
   blackberryBuildId: 0
   blackberryLandscapeSplashScreen: {fileID: 0}
   blackberryPortraitSplashScreen: {fileID: 0}
