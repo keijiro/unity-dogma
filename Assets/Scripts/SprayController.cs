@@ -37,6 +37,8 @@ public class SprayController : MonoBehaviour
             var timer = 0.0f;
 
             var prevInstance = Spray ();
+            audio.Play();
+
             yield return new WaitForSeconds (interval);
 
             while (bottle.Squashed && timer < duration) {
