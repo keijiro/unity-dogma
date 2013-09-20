@@ -26,7 +26,6 @@ GameObject:
   - 4: {fileID: 400002}
   - 137: {fileID: 13700000}
   - 114: {fileID: 11400000}
-  - 95: {fileID: 9500000}
   m_Layer: 0
   m_Name: Bottle
   m_TagString: Untagged
@@ -144,20 +143,6 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!95 &9500000
-Animator:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 0
-  m_Avatar: {fileID: 9000000, guid: 5d364c78bf09b472bbda276a692c8d0c, type: 3}
-  m_Controller: {fileID: 0}
-  m_AnimationSet: {fileID: 0}
-  m_CullingMode: 1
-  m_ApplyRootMotion: 1
-  m_AnimatePhysics: 0
-  m_HasTransformHierarchy: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
