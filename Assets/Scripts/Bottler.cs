@@ -23,8 +23,8 @@ public class Bottler : MonoBehaviour
         cameraMove.ZoomUp ();
         var bottle = Instantiate(mayoBottlePrefab) as GameObject;
 
-        // Wait for a mouse click.
-        while (!Input.GetMouseButtonDown(0)) {
+        // Wait for pressing the jump button.
+        while (!Input.GetButtonDown("Jump")) {
             yield return null;
         }
 
@@ -38,8 +38,8 @@ public class Bottler : MonoBehaviour
         cameraMove.ZoomUp ();
         bottle = Instantiate(tabascoBottlePrefab) as GameObject;
 
-        // Wait for a mouse click.
-        while (!Input.GetMouseButtonDown(0)) {
+        // Wait for pressing the jump button.
+        while (!Input.GetButtonDown("Jump")) {
             yield return null;
         }
 
