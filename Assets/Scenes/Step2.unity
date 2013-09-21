@@ -328,8 +328,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4c3b8313b60c4e84bcf5a7afc5cc596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smileAudioClip: {fileID: 8300000, guid: 6460c5b54918548e1926eb1ddba8c832, type: 3}
-  angerAudioClip: {fileID: 8300000, guid: b26a8ad7698e64d9eaa9a82bbf1bbe0f, type: 3}
+  smileAudioClip: {fileID: 8300000, guid: 354682d783f8a47d186abfdf4b8b0338, type: 3}
+  angerAudioClip: {fileID: 8300000, guid: 222f9650d512945f18192ad5070abcb8, type: 3}
 --- !u!137 &1043849489
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
