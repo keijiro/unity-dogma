@@ -725,9 +725,9 @@ MonoBehaviour:
   mayoBottlePrefab: {fileID: 100000, guid: 4e1ef3428a9024bf78908ea4f0368a74, type: 2}
   tabascoBottlePrefab: {fileID: 100000, guid: c592307fbc7e8473fabbe2e7d97934bf, type: 2}
   chanceOfMayo: .5
-  waitFor: 2.20000005
-  waitMultiplier: .935000002
-  bottleCount: 36
+  waitFor: 1.60000002
+  waitMultiplier: .879999995
+  bottleCount: 15
 --- !u!4 &2143237698
 Transform:
   m_ObjectHideFlags: 0
@@ -749,7 +749,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: db1c79da5c3724984a50bf7a46a5aa18, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: .300000012
+  m_Volume: .0500000007
   m_Pitch: 1
   Loop: 1
   Mute: 0
